@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 210 52% 24%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 38 92% 50%;
+    --accent-foreground: 210 52% 24%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 38 92% 50%;
+    --radius: 0.75rem;
+    
+    --navy: #1E3A5F;
+    --navy-light: #2A4A73;
+    --navy-dark: #0F2035;
+    --amber: #D4A843;
+    --amber-hover: #C49A3A;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Cairo', sans-serif;
+    direction: rtl;
+    @apply bg-background text-foreground;
+    overflow-x: hidden;
+  }
+
+  * {
+    @apply border-border;
+  }
+}
+
+@layer components {
+  .container-main {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-16 sm:py-20 lg:py-24;
+  }
+
+  .btn-primary {
+    @apply bg-[#D4A843] text-[#1E3A5F] font-semibold px-8 py-3.5 rounded-lg transition-all duration-300;
+  }
+  .btn-primary:hover {
+    @apply bg-[#C49A3A] -translate-y-0.5 shadow-lg;
+  }
+
+  .btn-secondary {
+    @apply border-2 border-white text-white font-semibold px-8 py-3 rounded-lg transition-all duration-300 bg-transparent;
+  }
+  .btn-secondary:hover {
+    @apply bg-white/10;
+  }
+
+  .glass-panel {
+    @apply bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300;
+  }
+  .card-hover:hover {
+    @apply -translate-y-1 shadow-xl;
+  }
+
+  .text-shadow {
+    text-shadow: 0 2px 12px rgba(0,0,0,0.5);
+  }
+
+  .gold-badge {
+    @apply bg-[#D4A843] text-white px-3 py-1 rounded-full text-xs font-bold;
+  }
+  .silver-badge {
+    @apply bg-[#94A3B8] text-white px-3 py-1 rounded-full text-xs font-bold;
+  }
+  .bronze-badge {
+    @apply bg-[#B45309] text-white px-3 py-1 rounded-full text-xs font-bold;
+  }
+
+  .status-available {
+    @apply bg-emerald-500 text-white px-2 py-0.5 rounded-full text-xs font-semibold;
+  }
+  .status-limited {
+    @apply bg-amber-500 text-white px-2 py-0.5 rounded-full text-xs font-semibold;
+  }
+  .status-out {
+    @apply bg-red-500 text-white px-2 py-0.5 rounded-full text-xs font-semibold;
+  }
+}
+
+@layer utilities {
+  .rtl-grid {
+    direction: rtl;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Leaflet RTL fix */
+.leaflet-container {
+  font-family: 'Cairo', sans-serif;
+}
