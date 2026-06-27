@@ -1,5 +1,5 @@
-import { db } from "../api/queries/connection";
-import * as schema from "./schema";
+import { db } from "../api/queries/connection.js";
+import * as schema from "./schema.js";
 import bcryptjs from "bcryptjs";
 
 async function seed() {

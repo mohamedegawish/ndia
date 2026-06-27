@@ -1,9 +1,9 @@
 import { z } from "zod";
-import { createRouter, publicQuery } from "./middleware";
-import { getDb } from "./queries/connection";
-import { users } from "@db/schema";
+import { createRouter, publicQuery } from "./middleware.js";
+import { getDb } from "./queries/connection.js";
+import { users } from "@db/schema.js";
 import { eq } from "drizzle-orm";
-import { hashPassword, comparePassword, createToken } from "./lib/auth";
+import { hashPassword, comparePassword, createToken } from "./lib/auth.js";
 
 export const authRouter = createRouter({
   register: publicQuery

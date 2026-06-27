@@ -1,7 +1,7 @@
 import { z } from "zod";
-import { createRouter, publicQuery, authedQuery } from "./middleware";
-import { getDb } from "./queries/connection";
-import { factories } from "@db/schema";
+import { createRouter, publicQuery, authedQuery } from "./middleware.js";
+import { getDb } from "./queries/connection.js";
+import { factories } from "@db/schema.js";
 import { eq, like, and, count, desc } from "drizzle-orm";
 
 export const factoryRouter = createRouter({

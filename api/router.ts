@@ -1,13 +1,13 @@
-import { createRouter, publicQuery } from "./middleware";
-import { authRouter } from "./auth-router";
-import { factoryRouter } from "./factory-router";
-import { productRouter } from "./product-router";
-import { categoryRouter } from "./category-router";
-import { searchRouter } from "./search-router";
-import { contactRouter } from "./contact-router";
-import { jobsRouter } from "./jobs-router";
-import { analyticsRouter } from "./analytics-router";
-import { newsRouter } from "./news-router";
+import { createRouter, publicQuery } from "./middleware.js";
+import { authRouter } from "./auth-router.js";
+import { factoryRouter } from "./factory-router.js";
+import { productRouter } from "./product-router.js";
+import { categoryRouter } from "./category-router.js";
+import { searchRouter } from "./search-router.js";
+import { contactRouter } from "./contact-router.js";
+import { jobsRouter } from "./jobs-router.js";
+import { analyticsRouter } from "./analytics-router.js";
+import { newsRouter } from "./news-router.js";
 
 export const appRouter = createRouter({
   ping: publicQuery.query(() => ({ ok: true, ts: Date.now() })),

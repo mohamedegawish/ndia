@@ -1,6 +1,6 @@
-import { createRouter, publicQuery } from "./middleware";
-import { getDb } from "./queries/connection";
-import { factories, products, users, contactMessages, jobListings } from "@db/schema";
+import { createRouter, publicQuery } from "./middleware.js";
+import { getDb } from "./queries/connection.js";
+import { factories, products, users, contactMessages, jobListings } from "@db/schema.js";
 import { count, eq } from "drizzle-orm";
 
 export const analyticsRouter = createRouter({
